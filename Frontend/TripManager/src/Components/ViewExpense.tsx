@@ -93,13 +93,13 @@ const ViewExpense = () => {
           <div className="buttonHolder mt-10  flex gap-x-5">
             <button
               onClick={handleExpenseView}
-              className="p-2 bg-[#FF5733] text-white pl-6 pr-6  2xl:text-[2.25vmin]"
+              className="p-2 bg-[#FF5733] text-white pl-3 pr-3  2xl:text-[2.25vmin]"
             >
               View Expense
             </button>
             <button
               onClick={handleFinalExpenseView}
-              className="p-2 bg-[#FF5733] text-white pl-6 pr-6  2xl:text-[2.25vmin]"
+              className="p-2 bg-[#FF5733] text-white pl-3 pr-3  2xl:text-[2.25vmin]"
             >
               View Final Expense
             </button>
