@@ -66,7 +66,7 @@ const Header = () => {
           {navIcon && (
             <>
               <div className="holder flex justify-center items-center">
-                <div className="navHolder h-[40vmin] w-[97vw] border-b-[1px] flex-col text-[3.45vmin] p-4">
+                <div className="navHolder h-[40vmin] w-[97vw] border-b-[0.15px] flex-col text-[3.45vmin] p-4">
                   <p className="hover:underline underline-offset-8 ">
                     <Link to="/">Add Expense</Link>
                   </p>
