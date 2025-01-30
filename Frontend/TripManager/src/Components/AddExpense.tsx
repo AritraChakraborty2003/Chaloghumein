@@ -30,7 +30,7 @@ const AddExpense = () => {
   return (
     <>
       <Header />
-      <div className="mainHolder w-[96vw] mt-18  lg:mt-14 flex justify-center items-center">
+      <div className="pb-10 mainHolder w-[96vw] mt-18  lg:mt-14 flex justify-center items-center">
         <form
           id="form"
           className="addTripForm w-[100%] flex flex-col justify-center items-center"
