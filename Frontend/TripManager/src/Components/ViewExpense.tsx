@@ -8,7 +8,6 @@ const ViewExpense = () => {
   const [trip, setTrip] = useState("");
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [tripData, setTripData] = useState([]);
   const [sum, setSum] = useState(0);
   const [filteredDataFinal, setFilteredDataFinal] = useState([]);
 
@@ -19,11 +18,6 @@ const ViewExpense = () => {
           `${import.meta.env.VITE_APP_API_URL}` + "expense"
         );
         setData(response.data);
-
-        const tripResponse = await axios.get(
-          `${import.meta.env.VITE_APP_API_URL}` + "trip"
-        );
-        setTripData(tripResponse.data);
       } catch (error) {
         console.error(error);
       }
