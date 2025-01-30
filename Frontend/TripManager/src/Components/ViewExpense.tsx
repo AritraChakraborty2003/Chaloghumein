@@ -1,3 +1,4 @@
+import ExpenseCard from "./ExpenseCard";
 import Header from "./Header";
 const ViewExpense = () => {
   return (
@@ -11,12 +12,12 @@ const ViewExpense = () => {
           <input
             type="text"
             placeholder="Enter Trip name..."
-            className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8"
+            className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8 2xl:text-[2.25vmin]"
           />
           <select
             name="cars"
             id="cars"
-            className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8"
+            className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8 2xl:text-[2.25vmin] "
           >
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
@@ -25,12 +26,14 @@ const ViewExpense = () => {
           </select>
 
           <div className="buttonHolder mt-10 ">
-            <button className="p-2 bg-[#FF5733] text-white pl-6 pr-6">
+            <button className="p-2 bg-[#FF5733] text-white pl-6 pr-6  2xl:text-[2.25vmin]">
               View Expense
             </button>
           </div>
         </form>
       </div>
+
+      <ExpenseCard />
     </>
   );
 };

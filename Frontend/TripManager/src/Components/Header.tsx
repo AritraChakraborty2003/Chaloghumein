@@ -40,7 +40,7 @@ const Header = () => {
               </p>
             </div>
           </div>
-          <div className="line w-[96%] h-[1px] bg-black mt-3 ml-5"></div>
+          <div className="line w-[96%] h-[0.15px] bg-black mt-3 ml-5"></div>
         </>
       )) || (
         <>

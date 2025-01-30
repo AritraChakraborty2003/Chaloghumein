@@ -2,6 +2,7 @@ import { tripSchemaObj } from "../../Models/Trip.js";
 
 export const tripPOST = () => {
   return async (req, res) => {
+    console.log(req.body);
     try {
       const trip = new tripSchemaObj(req.body);
       await trip.save();
