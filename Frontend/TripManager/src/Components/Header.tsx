@@ -62,11 +62,11 @@ const Header = () => {
               ></i>
             </div>
           </div>
-          <div className="line w-[96%] h-[0.15px] bg-black mt-3 ml-1"></div>
+          <div className="line w-[96%] h-[0.25px] bg-black mt-3 ml-2"></div>
           {navIcon && (
             <>
               <div className="holder flex justify-center items-center">
-                <div className="navHolder h-[40vmin] w-[97vw] border-b-[0.15px] flex-col text-[3.45vmin] p-4">
+                <div className="navHolder h-[40vmin] w-[97vw] border-b-[0.25px] flex-col text-[3.45vmin] p-4">
                   <p className="hover:underline underline-offset-8 ">
                     <Link to="/">Add Expense</Link>
                   </p>
