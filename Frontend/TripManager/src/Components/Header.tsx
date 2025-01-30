@@ -12,14 +12,17 @@ const Header = () => {
           <div className="header flex pt-3">
             <div className="logoHolderBox flex gap-x-3 w-[25%] p-1 pl-5">
               <div className="logoHolder h-[8vmin] w-[8vmin] ">
-                <img
-                  src="budgetIcon.png"
-                  alt="logo"
-                  className="logoImage max-w-full max-h-full object-contain"
-                />
+                <Link to="/">
+                  <img
+                    src="budgetIcon.png"
+                    alt="logo"
+                    className="logoImage max-w-full max-h-full object-contain"
+                  />
+                </Link>
               </div>
+
               <div className="logoText pt-5 p-1 text-[#FF5733] text-xl">
-                Expense Tracker
+                <Link to="/">Expense Tracker</Link>
               </div>
             </div>
             <div className="SupportBox flex gap-x-3 w-[40%] 2xl:w-[45%]"></div>
