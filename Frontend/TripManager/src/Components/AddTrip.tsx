@@ -4,23 +4,25 @@ import axios from "axios";
 
 const AddTrip = () => {
   const [trip, setTrip] = useState("");
-  const [persons, setPersons] = useState(0);
-  const [days, setDays] = useState(0);
-  const [families, setFamilies] = useState(0);
+  const [persons, setPersons] = useState("");
+  const [days, setDays] = useState("");
+  const [families, setFamilies] = useState("");
   const addTrip = async (e: any): Promise<void> => {
     e.preventDefault();
     try {
       await axios.post(`${import.meta.env.VITE_APP_API_URL}` + "trip", {
         trip: trip,
-        days: days,
-        persons: persons,
-        family: families,
+        days: Number(days),
+        persons: Number(persons),
+        family: Number(families),
       });
       alert("Trip added successfully: ");
       setTrip("");
-      setPersons(Number(""));
-      setDays(Number(""));
-      setFamilies(Number(""));
+      setPersons("");
+      setDays("");
+      setFamilies("");
+      const form = document.querySelector<HTMLFormElement>("#form");
+      form?.reset();
     } catch (error) {
       console.error("Error in adding trip: ", error);
     }
@@ -29,7 +31,10 @@ const AddTrip = () => {
     <>
       <Header />
       <div className="mainHolder w-[96vw] mt-18  lg:mt-14 flex justify-center items-center">
-        <form className="addTripForm w-[100%] flex flex-col justify-center items-center">
+        <form
+          id="form"
+          className="addTripForm w-[100%] flex flex-col justify-center items-center"
+        >
           <p className="text-[8vmin] font-poppins text-[#FF5733] ">Add Trip</p>
           <input
             type="text"
@@ -39,23 +44,23 @@ const AddTrip = () => {
             className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8"
           />
           <input
-            type="number"
+            type="text"
             id="persons"
-            onChange={(e): void => setPersons(Number(e.target.value))}
+            onChange={(e): void => setPersons(e.target.value)}
             placeholder="Enter no. Of Persons..."
             className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8"
           />
           <input
-            type="number"
+            type="text"
             id="days"
-            onChange={(e): void => setDays(Number(e.target.value))}
+            onChange={(e): void => setDays(e.target.value)}
             placeholder="Enter no of days..."
             className="w-[85%] lg:w-[35%]  border-b-[0.1px] p-3 mt-8"
           />
           <input
-            type="number"
+            type="text"
             id="families"
-            onChange={(e): void => setFamilies(Number(e.target.value))}
+            onChange={(e): void => setFamilies(e.target.value)}
             placeholder="Enter no of familes..."
             className="w-[85%] lg:w-[35%]  border-b-[0.1px] p-3 mt-8"
           />

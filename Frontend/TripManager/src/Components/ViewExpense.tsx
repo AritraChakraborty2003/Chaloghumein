@@ -14,20 +14,18 @@ const ViewExpense = () => {
             placeholder="Enter Trip name..."
             className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8 2xl:text-[2.25vmin]"
           />
-          <select
-            name="cars"
-            id="cars"
-            className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8 2xl:text-[2.25vmin] "
-          >
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
+          <input
+            type="Day"
+            placeholder="Enter Day..."
+            className="w-[85%] lg:w-[35%] border-b-[0.1px] p-3 mt-8 2xl:text-[2.25vmin]"
+          />
 
-          <div className="buttonHolder mt-10 ">
+          <div className="buttonHolder mt-10  flex gap-x-5">
             <button className="p-2 bg-[#FF5733] text-white pl-6 pr-6  2xl:text-[2.25vmin]">
               View Expense
+            </button>
+            <button className="p-2 bg-[#FF5733] text-white pl-6 pr-6  2xl:text-[2.25vmin]">
+              View Final Split
             </button>
           </div>
         </form>
