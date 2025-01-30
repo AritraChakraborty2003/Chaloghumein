@@ -4,3 +4,10 @@ input:focus,
 select:focus {
   outline: none;
 }
+
+* {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}

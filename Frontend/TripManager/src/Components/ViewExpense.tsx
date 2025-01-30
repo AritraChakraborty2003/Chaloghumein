@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import ExpenseCard from "./ExpenseCard";
 import Header from "./Header";
 import axios from "axios";
+import SplitViwer from "./SplitViwer";
 const ViewExpense = () => {
   const [day, setDay] = useState("");
   const [trip, setTrip] = useState("");
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [tripData, setTripData] = useState([]);
+  const [sum, setSum] = useState(0);
+  const [filteredDataFinal, setFilteredDataFinal] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +19,11 @@ const ViewExpense = () => {
           `${import.meta.env.VITE_APP_API_URL}` + "expense"
         );
         setData(response.data);
+
+        const tripResponse = await axios.get(
+          `${import.meta.env.VITE_APP_API_URL}` + "trip"
+        );
+        setTripData(tripResponse.data);
       } catch (error) {
         console.error(error);
       }
@@ -35,8 +44,10 @@ const ViewExpense = () => {
       const filtered = data.filter((expense: any) => {
         return expense.trip === trip && expense.day === day;
       });
+      setFilteredDataFinal([]);
 
       setFilteredData(filtered);
+
       console.log(filtered);
     } else {
       alert("No Data Found");
@@ -45,10 +56,18 @@ const ViewExpense = () => {
 
   const handleFinalExpenseView = (e: any) => {
     e.preventDefault();
+
     const filtered = data.filter((expense: any) => {
       return expense.trip === trip;
     });
-    setFilteredData(filtered);
+
+    let sum = 0;
+    filtered.map((expense: any) => {
+      sum += expense.amt;
+    });
+    setSum(sum);
+    setFilteredData([]);
+    setFilteredDataFinal(filtered);
   };
 
   return (
@@ -94,7 +113,19 @@ const ViewExpense = () => {
         </form>
       </div>
 
-      {filteredData.length > 0 ? <ExpenseCard data={filteredData} /> : <></>}
+      {filteredData.length > 0 && filteredDataFinal.length <= 0 ? (
+        <ExpenseCard data={filteredData} />
+      ) : (
+        <></>
+      )}
+      {filteredDataFinal.length > 0 ? (
+        <>
+          <ExpenseCard data={filteredDataFinal}></ExpenseCard>
+          <SplitViwer data={filteredDataFinal} total={sum} />
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

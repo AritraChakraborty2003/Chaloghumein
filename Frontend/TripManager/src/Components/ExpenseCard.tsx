@@ -34,7 +34,7 @@ const ExpenseCard = (props: any) => {
             </div>
           </div>
         ))}
-        <div className="pb-28">
+        <div className="pb-5">
           <div className="line w-[96%] lg:w-[95%]  h-[0.15px] bg-black mt-6 ml-2 lg:ml-5"></div>
           <p className="text-[4vmin]  md:text-[3vmin] font-poppins text-[#8A8A8A] text-end mr-5  lg:mr-[25vmin] lg:mt-4  text-[3.35vmin] 2xl:text-[2.45vmin]">
             Total Expense: ₹ {total}
