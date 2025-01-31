@@ -36,7 +36,7 @@ const SplitViwer = (props: any) => {
                 {Number(props.total) / Number(data[0].persons)}
               </p>
               <p className="text-[3.75vmin] mt-3 font-poppins text-[#8A8A8A] md:text-[3.35vmin]">
-                Cost Per Family(Total: {data[0].family} person):&nbsp; ₹
+                Cost Per Family(Total: {data[0].family} family):&nbsp; ₹
                 {props.total}/{data[0].family}= ₹
                 {Number(props.total) / Number(data[0].family)}
               </p>

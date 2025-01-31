@@ -50,9 +50,10 @@ const ViewExpense = () => {
 
   const handleFinalExpenseView = (e: any) => {
     e.preventDefault();
+    setFilteredData([]);
 
     const filtered = data.filter((expense: any) => {
-      return expense.trip === trip;
+      return expense.trip.trim().toLowerCase() === trip.trim().toLowerCase();
     });
 
     let sum = 0;
@@ -60,7 +61,7 @@ const ViewExpense = () => {
       sum += expense.amt;
     });
     setSum(sum);
-    setFilteredData([]);
+
     setFilteredDataFinal(filtered);
   };
 
