@@ -36,7 +36,10 @@ const ViewExpense = () => {
       setFilteredData(filtered);
     } else if (data.length > 0 && day != "overall") {
       const filtered = data.filter((expense: any) => {
-        return expense.trip === trip && expense.day === day;
+        return (
+          expense.trip.trim().toLowerCase() === trip.trim().toLowerCase() &&
+          expense.day.trim().toLowerCase() === day.trim().toLowerCase()
+        );
       });
       setFilteredDataFinal([]);
 
